@@ -13,6 +13,7 @@ Patch0:		%{name}-no_libgnutls.patch
 URL:		http://konst.org.ua/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	libsigc++1-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
@@ -67,22 +68,25 @@ for i in kkstrtext-0.1 kksystr-0.1 kkconsui-0.1 libyahoo2-0.1 \
 	libicq2000-0.1 firetalk-0.1 libjabber-0.1 connwrap-0.1; do
 	cd $i
 	rm -f missing
-	aclocal
+	%{__aclocal}
 	%{__autoconf}
 	%{__automake}
 	cd ..
 done
-CXXFLAGS="-I%{_includedir}/ncurses %{rpmcflags}"
+CXXFLAGS="-I/usr/include/ncurses %{rpmcflags}"
 %configure \
 	--with-openssl
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-%find_lang %{name}
+
 rm -f contrib/spanish/Makefile*
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -92,5 +96,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README ChangeLog FAQ TODO THANKS NEWS INSTALL
 %lang(es) %doc contrib/spanish
 %attr(755,root,root) %{_bindir}/*
+%dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*.wav
 %{_mandir}/man?/*
