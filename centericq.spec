@@ -8,14 +8,16 @@ Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.gz
+Patch0:		%{name}-am_fixes.patch
 URL:		http://konst.org.ua/centericq/
-Obsoletes:	centerICQ
-BuildRequires:	ncurses-devel
-BuildRequires:	libstdc++-devel
-BuildRequires:	libsigc++-devel >= 1.0.0
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libstdc++-devel
+BuildRequires:	libsigc++-devel >= 1.0.0
+BuildRequires:	libtool
+BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	centerICQ
 
 %description
 CenterICQ is a text mode menu- and window-driven ICQ interface. It
@@ -39,21 +41,32 @@ Mo¿e tak¿e powi±zaæ zdarzenia z d¼wiêkami.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-CPPFLAGS="-I%{_includedir}/ncurses"; export CPPFLAGS
-%configure2_13
+rm -f missing
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c
+for i in kkstrtext-0.1 kksystr-0.1 kkconsui-0.1 libyahoo-0.1 libmsn-0.1\
+	libicq2000-0.2; do
+	cd $i
+	rm -f missing
+	aclocal
+	autoconf
+	automake -a -c
+	cd ..
+done
+CXXFLAGS="-I%{_includedir}/ncurses %{rpmcflags}"
+%configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-mv $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}.1 \
-   $RPM_BUILD_ROOT%{_mandir}/man1
 
 gzip -9nf README ChangeLog FAQ TODO
 
