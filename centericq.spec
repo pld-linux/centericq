@@ -13,10 +13,10 @@ Patch0:		%{name}-no_libgnutls.patch
 URL:		http://konst.org.ua/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libsigc++1-devel >= 1.0.0
+BuildRequires:	libsigc++-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	openssl-devel >= 0.9.7c
+BuildRequires:	openssl-devel >= 0.9.6a
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	centerICQ
