@@ -1,8 +1,10 @@
 Summary:	Console ncurses based IM (ICQ, Yahoo!, MSN, AIM, IRC) client
+Summary(es):	CenterICQ es un cliente ICQ basado en ncurses para el modo texto
 Summary(pl):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
+Summary(pt_BR):	O centerICQ é um cliente ICQ baseado em ncurses para o modo texto
 Name:		centericq
 Version:	4.7.2
-Release:	1	
+Release:	1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.gz
@@ -30,6 +32,9 @@ ignore, visible and invisible lists. It can also associate events with
 sounds, has support for Hebrew and Arabic languages and allows to
 arrange contacts into groups.
 
+%description -l es
+CenterICQ es un cliente ICQ basado en ncurses para el modo texto.
+
 %description -l pl
 CenterICQ to tekstowy, sterowany za pomoc± menu i okien interfejs do
 protoko³ów IM. Aktualnie obs³uguje protoko³y ICQ2000, Yahoo!, MSN, AIM
@@ -41,12 +46,15 @@ nowej poczty, w³±czanie automatycznego stanu Away po wybranym czasie
 nieaktywno¶ci (na dowolnej konsoli!), posiadanie w³asnej listy osób
 ignorowanych. Mo¿e tak¿e powi±zaæ zdarzenia z d¼wiêkami.
 
+%description -l pt_BR
+O centerICQ é um cliente ICQ baseado em ncurses para o modo texto.
+
 %prep
 %setup -q
 
 %build
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 %{__automake}
@@ -55,8 +63,8 @@ for i in kkstrtext-0.1 kksystr-0.1 kkconsui-0.1 libyahoo-0.1 libmsn-0.1\
 	cd $i
 	rm -f missing
 	aclocal
-	autoconf
-	automake -a -c
+	%{__autoconf}
+	%{__automake}
 	cd ..
 done
 CXXFLAGS="-I%{_includedir}/ncurses %{rpmcflags}"
