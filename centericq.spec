@@ -3,18 +3,21 @@ Summary(es):	CenterICQ es un cliente ICQ basado en ncurses para el modo texto
 Summary(pl):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
 Summary(pt_BR):	O centerICQ é um cliente ICQ baseado em ncurses para o modo texto
 Name:		centericq
-Version:	4.7.5
-Release:	1
+Version:	4.9.0
+Release:	0.1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.gz
-Patch0:		%{name}-acfix.patch
+Patch0:		%{name}-%{version}-acfix.patch
+Patch1:		%{name}-%{version}-am.patch
+Patch2:		%{name}-%{version}-po.patch
 URL:		http://konst.org.ua/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libsigc++1-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
+BuildRequires:	openssl-devel
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	centerICQ
@@ -53,6 +56,8 @@ O centerICQ é um cliente ICQ baseado em ncurses para o modo texto.
 %prep
 %setup -q
 %patch -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 rm -f missing
@@ -60,8 +65,8 @@ rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-for i in kkstrtext-0.1 kksystr-0.1 kkconsui-0.1 libyahoo-0.1 libmsn-0.1\
-	libicq2000-0.6 firetalk-0.1; do
+for i in kkstrtext-0.1 kksystr-0.1 kkconsui-0.1 libyahoo2-0.1 blip-0.1\
+	libicq2000-0.4.0 firetalk-0.1 libjabber-0.1 connwrap-0.1; do
 	cd $i
 	rm -f missing
 	aclocal
@@ -75,18 +80,18 @@ CXXFLAGS="-I%{_includedir}/ncurses %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
+	DESTDIR=$RPM_BUILD_ROOT 
 %find_lang %{name}
+rm -f contrib/spanish/Makefile*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README ChangeLog FAQ TODO
+%doc AUTHORS README ChangeLog FAQ TODO THANKS NEWS INSTALL
+%lang(es) %doc contrib/spanish 
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}/*.wav
 %{_mandir}/man?/*
