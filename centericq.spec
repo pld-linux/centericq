@@ -1,12 +1,11 @@
-Summary:	Text mode ICQ client
-Summary(pl):	Klient ICQ w wersji tekstowej
+Summary:	Console ncurses based IM (ICQ, Yahoo!, MSN, AIM, IRC) client
+Summary(pl):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
 Name:		centericq
-Version:	4.5.0
-Release:	1
+Version:	4.7.2
+Release:	1	
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.gz
-Patch0:		%{name}-am_fixes.patch
 URL:		http://konst.org.ua/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -18,28 +17,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	centerICQ
 
 %description
-CenterICQ is a text mode menu- and window-driven ICQ interface. It
-allows you to send, receive and forward messages, URLs and contacts,
-mass message send, search for users, view users' details, maintain
-your contact list directly from the program, view messages history,
-register a new UIN and update your details, be informed on receiving
-e-mail messages, automatically set away after the defined period of
-inactivity (on any console!), and have your own ignore list. It can
-also associate events with sounds.
+centericq is a text mode menu- and window-driven IM interface.
+Currently ICQ2000, Yahoo!, MSN, AIM TOC and IRC protocols are
+supported. It allows you to send, receive, and forward messages, URLs
+and, SMSes, mass message send, search for users (including extended
+"whitepages search"), view users' details, maintain your contact list
+directly from the program (including non-icq contacts), view the
+messages history, register a new UIN and update your details, be
+informed on receiving email messages, automatically set away after the
+defined period of inactivity (on any console), and have your own
+ignore, visible and invisible lists. It can also associate events with
+sounds, has support for Hebrew and Arabic languages and allows to
+arrange contacts into groups.
 
 %description -l pl
 CenterICQ to tekstowy, sterowany za pomoc± menu i okien interfejs do
-ICQ. Pozwala na wysy³anie, odbiór oraz przesy³anie dalej wiadomo¶ci,
-adresów i kontaktów, wysy³anie wielu wiadomo¶ci na raz, przegl±danie
-informacji o innych u¿ytkownikach, rejestracjê nowego UINu oraz
-uzupe³nianie swoich informacji, informowanie o nadej¶ciu nowej poczty,
-w³±czanie automatycznego stanu Away po wybranym czasie nieaktywno¶ci
-(na dowolnej konsoli!), posiadanie w³asnej listy osób ignorowanych.
-Mo¿e tak¿e powi±zaæ zdarzenia z d¼wiêkami.
+protoko³ów IM. Aktualnie obs³uguje protoko³y ICQ2000, Yahoo!, MSN, AIM
+TOC oraz IRC. Pozwala na wysy³anie, odbiór oraz przesy³anie dalej
+wiadomo¶ci, adresów i kontaktów, wysy³anie wielu wiadomo¶ci na raz,
+przegl±danie informacji o innych u¿ytkownikach, rejestracjê nowego
+UINu oraz uzupe³nianie swoich informacji, informowanie o nadej¶ciu
+nowej poczty, w³±czanie automatycznego stanu Away po wybranym czasie
+nieaktywno¶ci (na dowolnej konsoli!), posiadanie w³asnej listy osób
+ignorowanych. Mo¿e tak¿e powi±zaæ zdarzenia z d¼wiêkami.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 rm -f missing
@@ -48,7 +51,7 @@ aclocal
 %{__autoconf}
 %{__automake}
 for i in kkstrtext-0.1 kksystr-0.1 kkconsui-0.1 libyahoo-0.1 libmsn-0.1\
-	libicq2000-0.2; do
+	libicq2000-0.6 firetalk-0.1; do
 	cd $i
 	rm -f missing
 	aclocal
@@ -66,8 +69,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README ChangeLog FAQ TODO
-
 %find_lang %{name}
 
 %clean
@@ -75,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS README ChangeLog FAQ TODO
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
+%{_datadir}/%{name}/*.wav
 %{_mandir}/man?/*
