@@ -85,7 +85,7 @@ CXXFLAGS="-I%{_includedir}/ncurses %{rpmcflags}"
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT 
+	DESTDIR=$RPM_BUILD_ROOT
 %find_lang %{name}
 rm -f contrib/spanish/Makefile*
 
@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS README ChangeLog FAQ TODO THANKS NEWS INSTALL
-%lang(es) %doc contrib/spanish 
+%lang(es) %doc contrib/spanish
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}/*.wav
 %{_mandir}/man?/*
