@@ -1,0 +1,11 @@
+--- centericq-4.5.0/Makefile.am~	Sat Dec 15 15:43:41 2001
++++ centericq-4.5.0/Makefile.am	Sat Dec 15 15:43:41 2001
+@@ -6,6 +6,6 @@
+ 	mv .makefile.am Makefile.am; autoconf && automake
+ 
+ # END OF MOTOR DIST TARGETS #
+-EXTRA_DIST = acconfig.h centericq.1 ABOUT-NLS AUTHORS ChangeLog COPYING FAQ INSTALL NEWS README TODO centericq.spec kkstrtext-0.1/* kksystr-0.1/* kkconsui-0.1/* libyahoo-0.1/* libmsn-0.1/* libicq2000-0.2/*
++man_MANS = centericq.1
++EXTRA_DIST = acconfig.h $(man_MANS) FAQ INSTALL TODO centericq.spec kkstrtext-0.1/* kksystr-0.1/* kkconsui-0.1/* libyahoo-0.1/* libmsn-0.1/* libicq2000-0.2/*
+ AUTOMAKE_OPTIONS = foreign
+-pkgdata_DATA = centericq.1
