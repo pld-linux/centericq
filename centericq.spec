@@ -8,11 +8,12 @@ Release:	1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.gz
+Patch0:		%{name}-acfix.patch
 URL:		http://konst.org.ua/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libstdc++-devel
 BuildRequires:	libsigc++-devel >= 1.0.0
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,6 +52,7 @@ O centerICQ é um cliente ICQ baseado em ncurses para o modo texto.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 rm -f missing
