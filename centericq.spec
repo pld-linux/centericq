@@ -18,8 +18,9 @@ BuildRequires:	gnutls-devel
 BuildRequires:	libsigc++1-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	ncurses-devel
+BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	perl-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	centerICQ
 
@@ -41,7 +42,7 @@ arrange contacts into groups.
 CenterICQ to tekstowy, sterowany za pomoc± menu i okien interfejs do
 protoko³ów IM. Aktualnie obs³uguje protoko³y ICQ2000, Yahoo!, MSN, AIM
 TOC oraz IRC. Pozwala na wysy³anie, odbiór oraz przesy³anie dalej
-wiadomo¶ci, adresów i kontaktów, wysy³anie wielu wiadomo¶ci na raz,
+wiadomo¶ci, adresów i kontaktów, wysy³anie wielu wiadomo¶ci naraz,
 przegl±danie informacji o innych u¿ytkownikach, rejestracjê nowego
 UINu oraz uzupe³nianie swoich informacji, informowanie o nadej¶ciu
 nowej poczty, w³±czanie automatycznego stanu Away po wybranym czasie
