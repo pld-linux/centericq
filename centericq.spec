@@ -5,8 +5,6 @@ Version:	4.5.0
 Release:	1
 License:	GPL
 Group:		Applications/Communications
-Group(de):	Applikationen/Kommunikation
-Group(pl):	Aplikacje/Komunikacja
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-am_fixes.patch
 URL:		http://konst.org.ua/centericq/
