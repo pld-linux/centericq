@@ -1,0 +1,32 @@
+diff -durN centericq-4.9.2.orig/configure.in centericq-4.9.2/configure.in
+--- centericq-4.9.2.orig/configure.in	Tue Apr 22 22:30:47 2003
++++ centericq-4.9.2/configure.in	Tue Apr 22 22:34:32 2003
+@@ -84,12 +84,6 @@
+ 	AC_CHECK_LIB(ssl, main)
+     else
+ 	AC_MSG_RESULT([not found or disabled])
+-
+-	AM_PATH_LIBGNUTLS_EXTRA(0.0.1, [
+-	    CXXFLAGS="$CXXFLAGS $LIBGNUTLS_CFLAGS"
+-	    LIBS="$LIBS $LIBGNUTLS_LIBS -lgnutls-extra"
+-	    AC_DEFINE(HAVE_GNUTLS)
+-	])
+     fi
+ fi
+ 
+diff -durN centericq-4.9.2.orig/connwrap-0.1/configure.in centericq-4.9.2/connwrap-0.1/configure.in
+--- centericq-4.9.2.orig/connwrap-0.1/configure.in	Sat Jan 18 16:44:32 2003
++++ centericq-4.9.2/connwrap-0.1/configure.in	Tue Apr 22 22:34:50 2003
+@@ -43,12 +43,6 @@
+ 	AC_CHECK_LIB(ssl, main)
+     else
+ 	AC_MSG_RESULT([not found or disabled])
+-
+-	AM_PATH_LIBGNUTLS_EXTRA(0.0.1, [
+-	    CXXFLAGS="$CXXFLAGS $LIBGNUTLS_CFLAGS"
+-	    LIBS="$LIBS $LIBGNUTLS_LIBS -lgnutls-extra"
+-	    AC_DEFINE(HAVE_GNUTLS)
+-	])
+     fi
+ fi
+ 
