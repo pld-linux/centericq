@@ -46,7 +46,7 @@ rm -f missing
 libtoolize --copy --force
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 for i in kkstrtext-0.1 kksystr-0.1 kkconsui-0.1 libyahoo-0.1 libmsn-0.1\
 	libicq2000-0.2; do
 	cd $i
