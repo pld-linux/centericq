@@ -12,7 +12,7 @@ Patch0:		%{name}-acfix.patch
 URL:		http://konst.org.ua/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libsigc++-devel >= 1.0.0
+BuildRequires:	libsigc++1-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
