@@ -18,7 +18,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	libsigc++-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	openssl-devel >= 0.9.6c
+BuildRequires:	openssl-devel >= 0.9.6m
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	centerICQ
