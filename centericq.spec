@@ -9,16 +9,14 @@ License:	GPL
 Group:		Applications/Communications
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.gz
 # Source0-md5:	09c1672c0c2e5ef7e8a94052a71c58cc
-Patch0:		%{name}-acfix.patch
-Patch1:		%{name}-am.patch
-Patch2:		%{name}-no_libgnutls.patch
+Patch0:		%{name}-no_libgnutls.patch
 URL:		http://konst.org.ua/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libsigc++1-devel >= 1.0.0
+BuildRequires:	libsigc++-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	openssl-devel >= 0.9.7c
+BuildRequires:	openssl-devel >= 0.9.6a
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	centerICQ
@@ -56,9 +54,7 @@ O centerICQ é um cliente ICQ baseado em ncurses para o modo texto.
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
-%patch2 -p1
+%patch0 -p1
 
 %build
 rm -f missing
