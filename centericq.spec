@@ -14,6 +14,7 @@ URL:		http://konst.org.ua/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
+BuildRequires:	gnutls-devel
 BuildRequires:	libsigc++1-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
