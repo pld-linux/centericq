@@ -37,9 +37,6 @@ ignore, visible and invisible lists. It can also associate events with
 sounds, has support for Hebrew and Arabic languages and allows to
 arrange contacts into groups.
 
-%description -l es
-CenterICQ es un cliente ICQ basado en ncurses para el modo texto.
-
 %description -l pl
 CenterICQ to tekstowy, sterowany za pomoc± menu i okien interfejs do
 protoko³ów IM. Aktualnie obs³uguje protoko³y ICQ2000, Yahoo!, MSN, AIM
