@@ -8,6 +8,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.gz
+# Source0-md5:	fb009228b3bc3cf29584601cc82e90df
 Patch0:		%{name}-4.9.0-acfix.patch
 Patch1:		%{name}-4.9.0-am.patch
 Patch2:		%{name}-4.9.0-po.patch
