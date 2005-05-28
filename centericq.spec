@@ -13,6 +13,7 @@ Patch0:		%{name}-no_libgnutls.patch
 URL:		http://thekonst.net/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gnutls-devel
 BuildRequires:	libsigc++1-devel >= 1.0.0
@@ -20,7 +21,6 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRequires:	openssl-devel >= 0.9.7d
-BuildRequires:	perl-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	centerICQ
 
