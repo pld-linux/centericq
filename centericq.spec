@@ -4,7 +4,7 @@ Summary(pl):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
 Summary(pt_BR):	O centerICQ é um cliente ICQ baseado em ncurses para o modo texto
 Name:		centericq
 Version:	4.20.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.bz2
@@ -15,7 +15,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
-BuildRequires:	gnutls-devel
+BuildRequires:	gnutls-devel >= 1.2.5
 BuildRequires:	libsigc++1-devel >= 1.0.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
