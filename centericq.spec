@@ -1,3 +1,5 @@
+# TODO
+# - security  http://security.gentoo.org/glsa/glsa-200507-26.xml
 Summary:	Console ncurses based IM (ICQ, Yahoo!, MSN, AIM, IRC) client
 Summary(es):	CenterICQ es un cliente ICQ basado en ncurses para el modo texto
 Summary(pl):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
