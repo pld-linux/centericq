@@ -1,17 +1,17 @@
-# TODO
-# - security  http://security.gentoo.org/glsa/glsa-200507-26.xml
 Summary:	Console ncurses based IM (ICQ, Yahoo!, MSN, AIM, IRC) client
 Summary(es):	CenterICQ es un cliente ICQ basado en ncurses para el modo texto
 Summary(pl):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
 Summary(pt_BR):	O centerICQ é um cliente ICQ baseado em ncurses para o modo texto
 Name:		centericq
 Version:	4.21.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.bz2
 # Source0-md5:	82e426f2b4f6f2ab799c28807f36ade6
 Patch0:		%{name}-no_libgnutls.patch
+Patch1:		%{name}-icq-short-read.patch
+Patch2:		%{name}-memory-handling.patch
 URL:		http://thekonst.net/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -57,6 +57,8 @@ O centerICQ é um cliente ICQ baseado em ncurses para o modo texto.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 mv -f po/{zh_TW.Big5,zh_TW}.po
 %{__perl} -pi -e 's/zh_TW\.Big5/zh_TW/' configure.in
