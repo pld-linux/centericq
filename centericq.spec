@@ -23,8 +23,9 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
 BuildRequires:	openssl-devel >= 0.9.7d
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRequires:	perl-base
 Obsoletes:	centerICQ
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 centericq is a text mode menu- and window-driven IM interface.
