@@ -1,7 +1,7 @@
 Summary:	Console ncurses based IM (ICQ, Yahoo!, MSN, AIM, IRC) client
-Summary(es.UTF-8):   CenterICQ es un cliente ICQ basado en ncurses para el modo texto
-Summary(pl.UTF-8):   Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
-Summary(pt_BR.UTF-8):   O centerICQ é um cliente ICQ baseado em ncurses para o modo texto
+Summary(es.UTF-8):	CenterICQ es un cliente ICQ basado en ncurses para el modo texto
+Summary(pl.UTF-8):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
+Summary(pt_BR.UTF-8):	O centerICQ é um cliente ICQ baseado em ncurses para o modo texto
 Name:		centericq
 Version:	4.21.0
 Release:	2
