@@ -1,7 +1,7 @@
 Summary:	Console ncurses based IM (ICQ, Yahoo!, MSN, AIM, IRC) client
-Summary(es):	CenterICQ es un cliente ICQ basado en ncurses para el modo texto
-Summary(pl):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
-Summary(pt_BR):	O centerICQ È um cliente ICQ baseado em ncurses para o modo texto
+Summary(es.UTF-8):   CenterICQ es un cliente ICQ basado en ncurses para el modo texto
+Summary(pl.UTF-8):   Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
+Summary(pt_BR.UTF-8):   O centerICQ √© um cliente ICQ baseado em ncurses para o modo texto
 Name:		centericq
 Version:	4.21.0
 Release:	2
@@ -41,19 +41,19 @@ ignore, visible and invisible lists. It can also associate events with
 sounds, has support for Hebrew and Arabic languages and allows to
 arrange contacts into groups.
 
-%description -l pl
-CenterICQ to tekstowy, sterowany za pomoc± menu i okien interfejs do
-protoko≥Ûw IM. Aktualnie obs≥uguje protoko≥y ICQ2000, Yahoo!, MSN, AIM
-TOC oraz IRC. Pozwala na wysy≥anie, odbiÛr oraz przesy≥anie dalej
-wiadomo∂ci, adresÛw i kontaktÛw, wysy≥anie wielu wiadomo∂ci naraz,
-przegl±danie informacji o innych uøytkownikach, rejestracjÍ nowego
-UINu oraz uzupe≥nianie swoich informacji, informowanie o nadej∂ciu
-nowej poczty, w≥±czanie automatycznego stanu Away po wybranym czasie
-nieaktywno∂ci (na dowolnej konsoli!), posiadanie w≥asnej listy osÛb
-ignorowanych. Moøe takøe powi±zaÊ zdarzenia z dºwiÍkami.
+%description -l pl.UTF-8
+CenterICQ to tekstowy, sterowany za pomocƒÖ menu i okien interfejs do
+protoko≈Ç√≥w IM. Aktualnie obs≈Çuguje protoko≈Çy ICQ2000, Yahoo!, MSN, AIM
+TOC oraz IRC. Pozwala na wysy≈Çanie, odbi√≥r oraz przesy≈Çanie dalej
+wiadomo≈õci, adres√≥w i kontakt√≥w, wysy≈Çanie wielu wiadomo≈õci naraz,
+przeglƒÖdanie informacji o innych u≈ºytkownikach, rejestracjƒô nowego
+UINu oraz uzupe≈Çnianie swoich informacji, informowanie o nadej≈õciu
+nowej poczty, w≈ÇƒÖczanie automatycznego stanu Away po wybranym czasie
+nieaktywno≈õci (na dowolnej konsoli!), posiadanie w≈Çasnej listy os√≥b
+ignorowanych. Mo≈ºe tak≈ºe powiƒÖzaƒá zdarzenia z d≈∫wiƒôkami.
 
-%description -l pt_BR
-O centerICQ È um cliente ICQ baseado em ncurses para o modo texto.
+%description -l pt_BR.UTF-8
+O centerICQ √© um cliente ICQ baseado em ncurses para o modo texto.
 
 %prep
 %setup -q
