@@ -4,7 +4,7 @@ Summary(pl):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
 Summary(pt_BR):	O centerICQ é um cliente ICQ baseado em ncurses para o modo texto
 Name:		centericq
 Version:	4.21.0
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.bz2
@@ -74,6 +74,7 @@ for i in kkstrtext-0.1 kksystr-0.1 kkconsui-0.1 libyahoo2-0.1 \
 	libicq2000-0.1 firetalk-0.1 libjabber-0.1 connwrap-0.1 \
 	libgadu-0.1 libmsn-0.1; do
 	cd $i
+	cp -f /usr/share/gettext/config.rpath .
 	%{__aclocal}
 	%{__autoconf}
 	%{__automake}
