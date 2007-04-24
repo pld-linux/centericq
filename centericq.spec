@@ -1,3 +1,5 @@
+# TODO
+# - WARNING: No GPG support in Jabber, since GPGME library not found or its setup not ok
 Summary:	Console ncurses based IM (ICQ, Yahoo!, MSN, AIM, IRC) client
 Summary(es.UTF-8):	CenterICQ es un cliente ICQ basado en ncurses para el modo texto
 Summary(pl.UTF-8):	Klient IM (ICQ, Yahoo!, MSN, AIM, IRC) w wersji tekstowej
@@ -12,6 +14,7 @@ Source0:	http://konst.org.ua/download/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-no_libgnutls.patch
 Patch1:		%{name}-icq-short-read.patch
 Patch2:		%{name}-memory-handling.patch
+Patch3:		%{name}-amd64jabber.patch
 URL:		http://thekonst.net/centericq/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -60,6 +63,7 @@ O centerICQ é um cliente ICQ baseado em ncurses para o modo texto.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 mv -f po/{zh_TW.Big5,zh_TW}.po
 %{__perl} -pi -e 's/zh_TW\.Big5/zh_TW/' configure.in
@@ -74,10 +78,12 @@ for i in kkstrtext-0.1 kksystr-0.1 kkconsui-0.1 libyahoo2-0.1 \
 	libicq2000-0.1 firetalk-0.1 libjabber-0.1 connwrap-0.1 \
 	libgadu-0.1 libmsn-0.1; do
 	cd $i
+	%{__libtoolize}
+	%{__gettextize}
 	%{__aclocal}
 	%{__autoconf}
 	%{__automake}
-	cd ..
+	cd -
 done
 CXXFLAGS="-I/usr/include/ncurses %{rpmcflags}"
 %configure \
