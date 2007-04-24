@@ -1,0 +1,18 @@
+from https://bugzilla.altlinux.org/show_bug.cgi?id=10786
+
+diff -ur centericq-4.21.0/libjabber-0.1/libxode.h centericq-4.21.0-amd64-jabber/libjabber-0.1/libxode.h
+--- centericq-4.21.0/libjabber-0.1/libxode.h    2005-02-10 03:36:26 +0300
++++ centericq-4.21.0-amd64-jabber/libjabber-0.1/libxode.h       2007-02-07
+18:49:56 +0300
+@@ -424,10 +424,10 @@
+  */
+
+ typedef struct {
+-  unsigned long H[5];
+-  unsigned long W[80];
++  uint32_t H[5];
++  uint32_t W[80];
+   int lenW;
+-  unsigned long sizeHi,sizeLo;
++  uint32_t sizeHi,sizeLo;
+ } SHA_CTX;
